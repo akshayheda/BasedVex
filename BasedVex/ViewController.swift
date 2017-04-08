@@ -11,8 +11,16 @@ import Alamofire
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+        override func viewDidLoad() {
+        
         super.viewDidLoad()
+        Alamofire.request("https://api.vexdb.io/v1/get_teams?region=california").responseJSON { response in
+            debugPrint(response)
+            
+            if let json = response.result.value {
+                print("JSON: \(json)")
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
