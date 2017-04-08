@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         override func viewDidLoad() {
         
         super.viewDidLoad()
-        Alamofire.request("https://api.vexdb.io/v1/get_teams?region=california").responseJSON { response in
+        Alamofire.request("https://api.vexdb.io/v1/get_teams?sku=RE-VRC-16-5372").responseJSON { response in
             debugPrint(response)
             
             if let json = response.result.value {
