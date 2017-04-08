@@ -1,0 +1,6 @@
+framework module Pods_BasedVex {
+  umbrella header "Pods-BasedVex-umbrella.h"
+
+  export *
+  module * { export * }
+}
