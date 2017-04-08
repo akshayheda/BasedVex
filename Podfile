@@ -7,6 +7,7 @@ target 'BasedVex' do
 
   # Pods for BasedVex
 	pod "Alamofire"
+	pod "SwiftyJSON"
 
   target 'BasedVexTests' do
     inherit! :search_paths
