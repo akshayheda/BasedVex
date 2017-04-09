@@ -12,17 +12,46 @@ import SwiftyJSON
 
 class RankingTableViewController: UITableViewController {
     var teamNumbers = [String]()
+    var rank = [Int]()
+    var wins = [Int]()
+    var losses = [Int]()
+    var ties = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Alamofire.request("https://api.vexdb.io/v1/get_rankings?sku=RE-VRC-16-5372").responseJSON { response in
             let json = JSON(response.result.value)
-            print(json)
+            
             let tempTeamNumbers = json["result"].arrayValue.map({$0["team"].stringValue})
             
             for string in tempTeamNumbers {
                 self.teamNumbers.append(string)
             }
-            print(self.teamNumbers)
+
+            let tempRank = json["result"].arrayValue.map({$0["rank"].intValue
+            })
+            
+            for int in tempRank {
+                self.rank.append(int)
+            }
+            let tempWins = json["result"].arrayValue.map({$0["wins"].intValue})
+            
+            for int in tempWins {
+                self.wins.append(int)
+            }
+            let tempLosses = json["result"].arrayValue.map({$0["losses"].intValue})
+            
+            for int in tempLosses {
+                self.losses.append(int)
+            }
+
+            let tempTies = json["result"].arrayValue.map({$0["ties"].intValue})
+            
+            for int in tempTies {
+                self.ties.append(int)
+            }
+
+
             
             self.tableView.reloadData()
             
@@ -47,11 +76,31 @@ class RankingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! RankingTableViewCell
         cell.teamNumber.text = self.teamNumbers[indexPath.row]
+        cell.rank.text = String(self.rank[indexPath.row])
+        cell.winloss.text = "\(wins[indexPath.row])-\(ties[indexPath.row])-\(losses[indexPath.row])"
 
         return cell
     }
-    
 
+     func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        self.performSegue(withIdentifier: "showView", sender: self)
+    }
+    
+     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "showView")
+        {
+ 
+            _ = segue.destination
+            
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let titleString = self.teamNumbers[indexPath.row]
+
+            self.tableView.deselectRow(at: indexPath, animated: true)
+ 
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

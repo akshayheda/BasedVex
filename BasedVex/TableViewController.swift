@@ -60,6 +60,13 @@ class TableViewController: UITableViewController {
             cell.Organization.text = self.organization[indexPath.row]
             return cell
     }
+    func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        self.performSegue(withIdentifier: "showView", sender: self)
+    }
+
+
 }
 
 
