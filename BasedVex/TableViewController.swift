@@ -15,6 +15,8 @@ class TableViewController: UITableViewController {
     var numbers = [String]()
     var organization = [String]()
     var cities = [String]()
+    var SenderTeam = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,12 +62,21 @@ class TableViewController: UITableViewController {
             cell.Organization.text = self.organization[indexPath.row]
             return cell
     }
-    func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
-        self.performSegue(withIdentifier: "showView", sender: self)
-    }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Segue to the second view controller
+        SenderTeam = numbers[indexPath.row]
+        self.performSegue(withIdentifier: "showTeam", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let secondViewController = segue.destination as! teamInfoViewController
+        
+        // set a variable in the second view controller with the data to pass
+        secondViewController.receivedData = SenderTeam as! String
+    }
 
 }
 

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -169,7 +168,7 @@
                     <navigationItem key="navigationItem" id="6oA-uh-lQh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="98L-HD-W9Q" kind="presentation" identifier="showView" id="FUP-7I-IYS"/>
+                        <segue destination="d8D-2i-PpY" kind="show" identifier="showTeam" id="il3-NB-zUE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZ4-69-pAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,38 +176,34 @@
             <point key="canvasLocation" x="439" y="-1308"/>
         </scene>
         <!--Team Info View Controller-->
-        <scene sceneID="s7y-Jh-d3l">
+        <scene sceneID="42b-0z-hhb">
             <objects>
-                <viewController id="98L-HD-W9Q" customClass="teamInfoViewController" customModule="BasedVex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d8D-2i-PpY" customClass="teamInfoViewController" customModule="BasedVex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7d2-dt-GIG"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fd2-gk-sUt"/>
+                        <viewControllerLayoutGuide type="top" id="8bM-I3-pJ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Kh-wK-XsN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="713-Io-3uR">
+                    <view key="view" contentMode="scaleToFill" id="Fpr-gL-8AQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHc-lB-9bn">
-                                <rect key="frame" x="44" y="125" width="275" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXu-PX-mJo">
+                                <rect key="frame" x="119" y="84" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PHc-lB-9bn" firstAttribute="top" secondItem="7d2-dt-GIG" secondAttribute="bottom" constant="105" id="PEG-c4-l4b"/>
-                            <constraint firstItem="PHc-lB-9bn" firstAttribute="leading" secondItem="713-Io-3uR" secondAttribute="leadingMargin" constant="28" id="c4m-3T-1OB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PHc-lB-9bn" secondAttribute="trailing" constant="40" id="dIJ-t1-REx"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="productLabel" destination="PHc-lB-9bn" id="uDv-ck-kST"/>
+                        <outlet property="senderLabel" destination="bXu-PX-mJo" id="Fhz-dU-94y"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="07h-8r-Tsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMF-oJ-Wdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2264.8000000000002" y="-1190.5547226386807"/>
+            <point key="canvasLocation" x="1645.5999999999999" y="-1471.2143928035982"/>
         </scene>
     </scenes>
 </document>

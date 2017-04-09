@@ -82,24 +82,6 @@ class RankingTableViewController: UITableViewController {
         return cell
     }
 
-     func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        self.performSegue(withIdentifier: "showView", sender: self)
-    }
-    
-     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if (segue.identifier == "showView")
-        {
- 
-            _ = segue.destination
-            
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            let titleString = self.teamNumbers[indexPath.row]
-
-            self.tableView.deselectRow(at: indexPath, animated: true)
- 
-        }
     }
     /*
     // Override to support conditional editing of the table view.
@@ -146,4 +128,4 @@ class RankingTableViewController: UITableViewController {
     }
     */
 
-}
+

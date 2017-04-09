@@ -10,10 +10,11 @@ import UIKit
 
 class teamInfoViewController: UIViewController {
 
-    @IBOutlet weak var productLabel: UILabel!
+    @IBOutlet weak var senderLabel: UILabel!
+    var receivedData = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        senderLabel.text = receivedData
         // Do any additional setup after loading the view.
     }
 
