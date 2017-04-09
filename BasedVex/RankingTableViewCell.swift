@@ -10,6 +10,9 @@ import UIKit
 
 class RankingTableViewCell: UITableViewCell {
     @IBOutlet weak var teamNumber: UILabel!
+    @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var winloss: UILabel!
+    @IBOutlet weak var teamName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
