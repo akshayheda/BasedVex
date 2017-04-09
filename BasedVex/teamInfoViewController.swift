@@ -29,6 +29,7 @@ class teamInfoViewController: UIViewController {
     var region = ""
     var country = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,14 +57,22 @@ class teamInfoViewController: UIViewController {
         Alamofire.request("https://api.vexdb.io/v1/get_rankings?sku=RE-VRC-16-5372&team=\(receivedData)").responseJSON { response in
             let json2 = JSON(response.result.value)
             
-            var wins = json2["result"].arrayValue.map({$0["wins"].stringValue})[0]
-            var losses = json2["result"].arrayValue.map({$0["losses"].stringValue})[0]
-            var ties = json2["result"].arrayValue.map({$0["ties"].stringValue})[0]
-            var sp  = json2["result"].arrayValue.map({$0["sp"].stringValue})[0]
-            var trsp  = json2["result"].arrayValue.map({$0["trsp"].stringValue})[0]
-            var opr  = json2["result"].arrayValue.map({$0["opr"].stringValue})[0]
-            var dpr  = json2["result"].arrayValue.map({$0["dpr"].stringValue})[0]
-            var ccwm  = json2["result"].arrayValue.map({$0["ccwm"].stringValue})[0]
+            var tempwins = json2["result"].arrayValue.map({$0["wins"].stringValue})
+            var wins = tempwins[0]
+            var templosses = json2["result"].arrayValue.map({$0["losses"].stringValue})
+            var losses = templosses[0]
+            var tempties = json2["result"].arrayValue.map({$0["ties"].stringValue})
+            var ties = tempties[0]
+            var tempsp  = json2["result"].arrayValue.map({$0["sp"].stringValue})
+            var sp = tempsp[0]
+            var temptrsp  = json2["result"].arrayValue.map({$0["trsp"].stringValue})
+            var trsp = temptrsp[0]
+            var tempopr  = json2["result"].arrayValue.map({$0["opr"].stringValue})
+            var opr = tempopr[0]
+            var tempdpr  = json2["result"].arrayValue.map({$0["dpr"].stringValue})
+            var dpr = tempdpr[0]
+            var tempccwm  = json2["result"].arrayValue.map({$0["ccwm"].stringValue})
+            var ccwm = tempccwm[0]
             
             self.oprLabel.text = "\(opr)"
             self.dprLabel.text = "\(dpr)"

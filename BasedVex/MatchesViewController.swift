@@ -35,6 +35,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
     var instance = [String]()
     
     override func viewDidLoad() {
+        
         Alamofire.request("https://api.vexdb.io/v1/get_matches?sku=RE-VRC-16-5372").responseJSON { response in
             let json = JSON(response.result.value)
             
@@ -93,6 +94,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             for string in tempinstance{
                 self.instance.append(string)
             }
+
             self.matchTable.delegate = self
             self.matchTable.dataSource = self
             self.matchTable.reloadData()
@@ -100,8 +102,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             
 
         }
-        createElos()
-        print(elos)
+        
         
         
     }
