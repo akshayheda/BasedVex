@@ -347,15 +347,16 @@
                         <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ccwmLabel" destination="a5X-iZ-qIc" id="3sq-Vg-vUx"/>
+                        <outlet property="ccwmLabel" destination="a5X-iZ-qIc" id="i19-n0-Ajq"/>
                         <outlet property="ccwn" destination="a5X-iZ-qIc" id="DBN-CU-HYr"/>
                         <outlet property="ccwnLabel" destination="a5X-iZ-qIc" id="vgE-xA-sLi"/>
-                        <outlet property="dprLabel" destination="yR0-Sa-5Gj" id="inf-8o-AgO"/>
-                        <outlet property="locationLabel" destination="HFa-SX-cQo" id="X2z-IC-0rb"/>
-                        <outlet property="oprLabel" destination="d9t-Qm-1k4" id="yMg-vd-nce"/>
+                        <outlet property="dprLabel" destination="yR0-Sa-5Gj" id="Gqn-GB-sP2"/>
+                        <outlet property="locationLabel" destination="HFa-SX-cQo" id="Nvo-Dj-dJ2"/>
+                        <outlet property="oprLabel" destination="d9t-Qm-1k4" id="F1D-2r-NBN"/>
                         <outlet property="senderLabel" destination="bXu-PX-mJo" id="Fhz-dU-94y"/>
-                        <outlet property="teamNameLabel" destination="csz-OK-CCB" id="RCe-Wq-8JA"/>
-                        <outlet property="trspLabel" destination="H7F-iG-ree" id="HYj-bv-dZ5"/>
+                        <outlet property="teamNameLabel" destination="csz-OK-CCB" id="oGC-Fv-IQx"/>
+                        <outlet property="teamNumberLabel" destination="bXu-PX-mJo" id="zFi-gE-q7e"/>
+                        <outlet property="trspLabel" destination="H7F-iG-ree" id="lh8-h8-6ox"/>
                         <outlet property="tsrpLabel" destination="H7F-iG-ree" id="SBt-Hl-Cit"/>
                     </connections>
                 </viewController>

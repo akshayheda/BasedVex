@@ -13,13 +13,15 @@ import SwiftyJSON
 class teamInfoViewController: UIViewController {
     
 
-    @IBOutlet weak var ccwmLabel: UILabel!
-    @IBOutlet weak var trspLabel: UILabel!
-    @IBOutlet weak var dprLabel: UILabel!
+    
+    
+    @IBOutlet weak var oprLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
-    @IBOutlet weak var senderLabel: UILabel!
-    @IBOutlet weak var oprLabel: UILabel!
+    @IBOutlet weak var teamNumberLabel: UILabel!
+    @IBOutlet weak var trspLabel: UILabel!
+    @IBOutlet weak var ccwmLabel: UILabel!
+    @IBOutlet weak var dprLabel: UILabel!
     var receivedData = ""
     var teamName = ""
     var city = ""
@@ -46,7 +48,7 @@ class teamInfoViewController: UIViewController {
             self.country = countryArray[0]
          
             
-            self.senderLabel.text = self.receivedData
+            self.teamNumberLabel.text = self.receivedData
             self.teamNameLabel.text = self.teamName
             self.locationLabel.text = "\(self.city), \(self.region), \(self.country)"
         }
