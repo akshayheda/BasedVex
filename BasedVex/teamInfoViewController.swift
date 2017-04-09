@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class teamInfoViewController: UIViewController {
 
     @IBOutlet weak var senderLabel: UILabel!
     var receivedData = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         senderLabel.text = receivedData
-        // Do any additional setup after loading the view.
+        Alamofire.request("https://api.vexdb.io/v1/get_teams?sku=RE-VRC-16-5372&team=\(receivedData)").responseJSON { response in
+            let json = JSON(response.result.value)
+            print(json)
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
