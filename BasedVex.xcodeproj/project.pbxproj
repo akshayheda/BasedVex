@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04E2FA416B0ECE82452BEA20 /* Pods_BasedVexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70F7A4D201435571AFC9130 /* Pods_BasedVexUITests.framework */; };
 		25AA198D30E3BC63663E9FD1 /* Pods_BasedVex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35491C352887AC5355547306 /* Pods_BasedVex.framework */; };
+		BA03C6311E99ABA90086FB62 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03C6301E99ABA90086FB62 /* TableViewCell.swift */; };
+		BA9974C51E99A0BA002348C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9974C41E99A0BA002348C2 /* TableViewController.swift */; };
 		F5589D4037826D998D636FA9 /* Pods_BasedVexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE9C3E408B398F8521E696F /* Pods_BasedVexTests.framework */; };
 		F9E70E081E997B8900DAE6B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E70E071E997B8900DAE6B4 /* AppDelegate.swift */; };
 		F9E70E0A1E997B8900DAE6B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E70E091E997B8900DAE6B4 /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 		70F2B9923A501091898A1959 /* Pods-BasedVexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasedVexUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasedVexUITests/Pods-BasedVexUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		945C68E62DF3BCE9C22E37DF /* Pods-BasedVexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasedVexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasedVexTests/Pods-BasedVexTests.release.xcconfig"; sourceTree = "<group>"; };
 		A70F7A4D201435571AFC9130 /* Pods_BasedVexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasedVexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA03C6301E99ABA90086FB62 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BA9974C41E99A0BA002348C2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BFE9C3E408B398F8521E696F /* Pods_BasedVexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasedVexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E653B328CA2B7FFA9279D6B3 /* Pods-BasedVexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasedVexUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasedVexUITests/Pods-BasedVexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F9E70E041E997B8900DAE6B4 /* BasedVex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasedVex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +143,9 @@
 			children = (
 				F9E70E071E997B8900DAE6B4 /* AppDelegate.swift */,
 				F9E70E091E997B8900DAE6B4 /* ViewController.swift */,
+				BA9974C41E99A0BA002348C2 /* TableViewController.swift */,
 				F9E70E0B1E997B8900DAE6B4 /* Main.storyboard */,
+				BA03C6301E99ABA90086FB62 /* TableViewCell.swift */,
 				F9E70E0E1E997B8900DAE6B4 /* Assets.xcassets */,
 				F9E70E101E997B8900DAE6B4 /* LaunchScreen.storyboard */,
 				F9E70E131E997B8900DAE6B4 /* Info.plist */,
@@ -447,6 +453,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E70E0A1E997B8900DAE6B4 /* ViewController.swift in Sources */,
+				BA03C6311E99ABA90086FB62 /* TableViewCell.swift in Sources */,
+				BA9974C51E99A0BA002348C2 /* TableViewController.swift in Sources */,
 				F9E70E081E997B8900DAE6B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +706,7 @@
 				F9E70E2E1E997B8900DAE6B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9E70E2F1E997B8900DAE6B4 /* Build configuration list for PBXNativeTarget "BasedVexTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +715,7 @@
 				F9E70E311E997B8900DAE6B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9E70E321E997B8900DAE6B4 /* Build configuration list for PBXNativeTarget "BasedVexUITests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +724,7 @@
 				F9E70E341E997B8900DAE6B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
