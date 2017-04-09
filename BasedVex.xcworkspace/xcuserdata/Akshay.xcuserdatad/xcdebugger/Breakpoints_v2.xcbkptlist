@@ -140,8 +140,56 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
+            landmarkName = "teamInfoViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BasedVex/teamInfoViewController.swift"
+            timestampString = "513414938.892801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BasedVex.teamInfoViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "BasedVex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Akshay/Desktop/BasedVex/BasedVex/teamInfoViewController.swift"
+                  timestampString = "513414938.949934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1059">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BasedVex.teamInfoViewController.(viewDidLoad () -&gt; ()).(closure #2)"
+                  moduleName = "BasedVex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Akshay/Desktop/BasedVex/BasedVex/teamInfoViewController.swift"
+                  timestampString = "513414938.951561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "2105">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

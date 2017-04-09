@@ -47,8 +47,16 @@ class teamInfoViewController: UIViewController {
         }
         Alamofire.request("https://api.vexdb.io/v1/get_rankings?sku=RE-VRC-16-5372&team=\(receivedData)").responseJSON { response in
             let json2 = JSON(response.result.value)
-            let opr = json2[1, "result", 2, "opr"].string
-            print(opr)
+            
+            var wins = json2["result"].arrayValue.map({$0["wins"].stringValue})[0]
+            var losses = json2["result"].arrayValue.map({$0["losses"].stringValue})[0]
+            var ties = json2["result"].arrayValue.map({$0["ties"].stringValue})[0]
+            var sp  = json2["result"].arrayValue.map({$0["sp"].stringValue})[0]
+            var trsp  = json2["result"].arrayValue.map({$0["trsp"].stringValue})[0]
+            var opr  = json2["result"].arrayValue.map({$0["opr"].stringValue})[0]
+            var dpr  = json2["result"].arrayValue.map({$0["dpr"].stringValue})[0]
+            var ccwm  = json2["result"].arrayValue.map({$0["ccwm"].stringValue})[0]
+            
         }
     }
 
