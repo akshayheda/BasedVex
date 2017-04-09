@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V82-fh-dhe">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V82-fh-dhe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r0l-0Y-J2a" id="abc-4p-HH8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ona-N1-56l">
@@ -180,7 +180,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hCz-h3-1SG" id="T68-yU-roX">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0b-o0-oxy">
@@ -348,16 +348,12 @@
                     </view>
                     <connections>
                         <outlet property="ccwmLabel" destination="a5X-iZ-qIc" id="i19-n0-Ajq"/>
-                        <outlet property="ccwn" destination="a5X-iZ-qIc" id="DBN-CU-HYr"/>
-                        <outlet property="ccwnLabel" destination="a5X-iZ-qIc" id="vgE-xA-sLi"/>
                         <outlet property="dprLabel" destination="yR0-Sa-5Gj" id="Gqn-GB-sP2"/>
                         <outlet property="locationLabel" destination="HFa-SX-cQo" id="Nvo-Dj-dJ2"/>
                         <outlet property="oprLabel" destination="d9t-Qm-1k4" id="F1D-2r-NBN"/>
-                        <outlet property="senderLabel" destination="bXu-PX-mJo" id="Fhz-dU-94y"/>
                         <outlet property="teamNameLabel" destination="csz-OK-CCB" id="oGC-Fv-IQx"/>
                         <outlet property="teamNumberLabel" destination="bXu-PX-mJo" id="zFi-gE-q7e"/>
                         <outlet property="trspLabel" destination="H7F-iG-ree" id="lh8-h8-6ox"/>
-                        <outlet property="tsrpLabel" destination="H7F-iG-ree" id="SBt-Hl-Cit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMF-oJ-Wdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
