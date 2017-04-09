@@ -119,7 +119,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "match", for: indexPath) as! MatchTableViewCell
-        print(blue2)
+        print(red2)
         
         
         print(matchNumber.count)
