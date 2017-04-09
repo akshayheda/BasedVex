@@ -15,6 +15,7 @@ class teamInfoViewController: UIViewController {
 
     
     
+    @IBOutlet weak var winlossLabel: UILabel!
     @IBOutlet weak var oprLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -68,6 +69,7 @@ class teamInfoViewController: UIViewController {
             self.dprLabel.text = "\(dpr)"
             self.ccwmLabel.text = "\(ccwm)"
             self.trspLabel.text = "\(trsp)"
+            self.winlossLabel.text = "\(wins)-\(ties)-\(losses)"
         }
     }
 
