@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TableViewController: UITableViewController {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var teamTable: UITableView!
     var numbers = [String]()
     var organization = [String]()
     var cities = [String]()
@@ -36,8 +37,9 @@ class TableViewController: UITableViewController {
             for string in tempcity {
                 self.cities.append(string)
             }
-
-            self.tableView.reloadData()
+            self.teamTable.delegate = self
+            self.teamTable.dataSource = self
+            self.teamTable.reloadData()
 
         }
     }
@@ -49,12 +51,12 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numbers.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! TableViewCell
             cell.number.text = self.numbers[indexPath.row]
@@ -63,7 +65,7 @@ class TableViewController: UITableViewController {
             return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Segue to the second view controller
         SenderTeam = numbers[indexPath.row]

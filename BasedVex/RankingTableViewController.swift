@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class RankingTableViewController: UITableViewController {
+class RankingTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var rankingTable: UITableView!
     var teamNumbers = [String]()
     var rank = [Int]()
     var wins = [Int]()
@@ -52,8 +54,9 @@ class RankingTableViewController: UITableViewController {
             }
 
 
-            
-            self.tableView.reloadData()
+            self.rankingTable.delegate = self
+            self.rankingTable.dataSource = self
+            self.rankingTable.reloadData()
             
             
             
@@ -68,12 +71,12 @@ class RankingTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return teamNumbers.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as! RankingTableViewCell
         cell.teamNumber.text = self.teamNumbers[indexPath.row]
         cell.rank.text = String(self.rank[indexPath.row])
