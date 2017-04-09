@@ -11,17 +11,31 @@ import Alamofire
 import SwiftyJSON
 
 class teamInfoViewController: UIViewController {
-
+    
     @IBOutlet weak var senderLabel: UILabel!
     var receivedData = ""
+    var teamName = ""
+    var city = ""
+    var region = ""
+    var country = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         senderLabel.text = receivedData
         Alamofire.request("https://api.vexdb.io/v1/get_teams?sku=RE-VRC-16-5372&team=\(receivedData)").responseJSON { response in
             let json = JSON(response.result.value)
-            print(json)
+            let teamNameArray = json["result"].arrayValue.map({$0["team_name"].stringValue})
+            _ = teamNameArray[0]
             
+            let cityArray = json["result"].arrayValue.map({$0["city"].stringValue})
+            _ = cityArray[0]
+            
+            
+            let regionArray = json["result"].arrayValue.map({$0["region"].stringValue})
+            _ = regionArray[0]
+            
+            let countryArray = json["result"].arrayValue.map({$0["country"].stringValue})
+            let country = countryArray[0]
             
         }
     }
