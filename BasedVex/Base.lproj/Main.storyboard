@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V82-fh-dhe">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V82-fh-dhe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="357.60000000000002" y="42.728635682158924"/>
         </scene>
-        <!--Item-->
+        <!--Rankings-->
         <scene sceneID="lQE-Y8-5dR">
             <objects>
                 <viewController id="vx5-Qc-6gH" customClass="RankingTableViewController" customModule="BasedVex" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,7 +240,7 @@
                             <constraint firstItem="K27-OT-TDh" firstAttribute="centerX" secondItem="ZyV-Vo-4db" secondAttribute="centerX" id="duC-lB-75T"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0JW-pd-vKf"/>
+                    <tabBarItem key="tabBarItem" title="Rankings" id="0JW-pd-vKf"/>
                     <connections>
                         <outlet property="rankingTable" destination="7zD-TA-4rZ" id="wHC-Mc-VLK"/>
                     </connections>
@@ -262,8 +262,8 @@
                         <color key="barTintColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ee1-N7-6bU" kind="relationship" relationship="viewControllers" id="iz3-yK-S8K"/>
                         <segue destination="Cpl-rY-MSm" kind="relationship" relationship="viewControllers" id="g4Y-yH-AA7"/>
+                        <segue destination="ee1-N7-6bU" kind="relationship" relationship="viewControllers" id="iz3-yK-S8K"/>
                         <segue destination="vx5-Qc-6gH" kind="relationship" relationship="viewControllers" id="6wh-J4-xhq"/>
                     </connections>
                 </tabBarController>
@@ -271,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="-595" y="-285"/>
         </scene>
-        <!--Item-->
+        <!--Teams-->
         <scene sceneID="Jg3-I1-w91">
             <objects>
                 <viewController id="Cpl-rY-MSm" customClass="TableViewController" customModule="BasedVex" customModuleProvider="target" sceneMemberID="viewController">
@@ -348,7 +348,7 @@
                             <constraint firstItem="q65-l0-kB3" firstAttribute="leading" secondItem="RZk-BO-f8n" secondAttribute="leading" id="stG-fX-Ch1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Dx6-C1-rLP"/>
+                    <tabBarItem key="tabBarItem" title="Teams" id="Dx6-C1-rLP"/>
                     <connections>
                         <outlet property="teamTable" destination="q65-l0-kB3" id="ccI-kF-iZg"/>
                         <segue destination="d8D-2i-PpY" kind="show" identifier="showTeam" id="L01-dH-2f9"/>
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWp-S7-bc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="434" y="-1329"/>
+            <point key="canvasLocation" x="432.80000000000001" y="-1329.0854572713645"/>
         </scene>
         <!--Team Info View Controller-->
         <scene sceneID="42b-0z-hhb">
@@ -373,6 +373,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXu-PX-mJo">
                                 <rect key="frame" x="0.0" y="38" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <color key="textColor" red="0.69832393550000005" green="0.69058387139999999" blue="0.71967500939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -454,8 +455,17 @@
                                 <color key="textColor" red="0.69832393550000005" green="0.69058387139999999" blue="0.71967500939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scZ-Rq-rQi" userLabel="Back to Team List">
+                                <rect key="frame" x="0.0" y="0.0" width="76" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="V82-fh-dhe" kind="show" id="ODM-C8-Wga"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                     </view>
                     <connections>
                         <outlet property="ccwmLabel" destination="a5X-iZ-qIc" id="i19-n0-Ajq"/>

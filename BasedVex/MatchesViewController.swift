@@ -129,15 +129,14 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.redScore.text = self.redScore[indexPath.row]
         cell.blueScore.text = self.blueScore[indexPath.row]
-        print(blueScore)
-        print(redScore)
-        if(self.redScore[indexPath.row] > self.blueScore[indexPath.row]) {
+
+        if(Int(self.redScore[indexPath.row])! >
+            Int(self.blueScore[indexPath.row])!) {
             cell.winner.text = "R"
-            print("R")
         }
-        if(self.redScore[indexPath.row] < self.blueScore[indexPath.row]) {
+        if(Int(self.redScore[indexPath.row])! < Int(self.blueScore[indexPath.row])!) {
             cell.winner.text = "B"
-            print("B")
+
         }
         
         if(Int(self.round[indexPath.row])! < 3) {
