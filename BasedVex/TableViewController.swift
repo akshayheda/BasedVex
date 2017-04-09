@@ -13,6 +13,8 @@ import SwiftyJSON
 class TableViewController: UITableViewController {
 
     var numbers = [String]()
+    var organization = [String]()
+    var cities = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +26,15 @@ class TableViewController: UITableViewController {
             for string in tempnumbers {
                 self.numbers.append(string)
             }
-            let teamNames = json["result"].arrayValue.map({$0["team_name"].stringValue})
+            let tempOrg = json["result"].arrayValue.map({$0["team_name"].stringValue})
+            for string in tempOrg {
+                self.organization.append(string)
+            }
+            let tempcity = json["result"].arrayValue.map({$0["city"].stringValue})
+            for string in tempcity {
+                self.cities.append(string)
+            }
+
             self.tableView.reloadData()
 
         }
@@ -45,7 +55,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! TableViewCell
-            cell.location.text = self.numbers[indexPath.row]
+            cell.number.text = self.numbers[indexPath.row]
+            cell.location.text = self.cities[indexPath.row]
+            cell.Organization.text = self.organization[indexPath.row]
             return cell
     }
 }
