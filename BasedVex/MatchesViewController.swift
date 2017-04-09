@@ -10,7 +10,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import Foundation
+var elos = [String:Float]()
 class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
@@ -99,6 +100,8 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
             
 
         }
+        createElos()
+        print(elos)
         
         
     }
@@ -155,18 +158,80 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    var events = [String]()
+    func createElos() {
+        Alamofire.request("https://api.vexdb.io/v1/get_events?season=starstruck&status=all").responseJSON { response in
+            let json = JSON(response.result.value)
+            let tempKeys = json["result"].arrayValue.map({$0["key"].stringValue})
+            for string in tempKeys{
+                self.events.append(string)
+            }
     }
-    */
+        for string in events {
+            Alamofire.request("https://api.vexdb.io/v1/get_matches?round=2&sku=\(string)").responseJSON { response in
+                let json = JSON(response.result.value)
+                let matchNumber = json["result"].arrayValue.map({$0["matchnum"].stringValue})
+                
 
+                let red1 = json["result"].arrayValue.map({$0["red1"].stringValue})
+                let red2 = json["result"].arrayValue.map({$0["red2"].stringValue})
+                let blue1 = json["result"].arrayValue.map({$0["blue1"].stringValue})
+                let blue2 = json["result"].arrayValue.map({$0["blue2"].stringValue})
+                let redScore = json["result"].arrayValue.map({$0["redscore"].floatValue})
+                let blueScore = json["result"].arrayValue.map({$0["bluescore"].floatValue})
+                
+                for index in 1...matchNumber.count {
+                    if(elos[red1[index]]==nil) {elos[red1[index]] = 1500}
+                    if(elos[red2[index]]==nil) {elos[red2[index]] = 1500}
+                    if(elos[blue1[index]]==nil) {elos[blue1[index]] = 1500}
+                    if(elos[blue2[index]]==nil) {elos[blue2[index]] = 1500}
+                    
+                    var combinedRedElo = elos[red1[index]]! + elos[red2[index]]!
+                    var combinedBlueElo = elos[blue1[index]]! + elos[blue2[index]]!
+                    var expectedRed: Float = (powf(10, Float(combinedRedElo/400))) / (powf(10, Float(combinedRedElo/400)) + (powf(10, Float(combinedBlueElo/400)) * Float(76)))
+                    
+                    var expectedBlue: Float = (powf(10, Float(combinedBlueElo/400))) / (powf(10, Float(combinedRedElo/400)) + (powf(10, Float(combinedBlueElo/400)) * Float(76)))
+                
+                    
+                    var netRedElo = log10( abs( redScore[index] - blueScore[index]) + 1)*32*((redScore[index]) - (expectedRed))
+                    var netBlueElo = log10( abs( redScore[index] - blueScore[index]) + 1)*32*((blueScore[index]) - (expectedBlue))
+                    
+                    var red1Elo = elos[red1[index]]
+                    var red1EloChange = Float(red1Elo!/combinedRedElo)*Float(100)*Float(netRedElo)
+                    var teamRed1 = red1[index]
+                    elos[teamRed1] = elos[teamRed1]! + red1EloChange
+                    
+                    var red2Elo = elos[red2[index]]
+                    var red2EloChange = Float(red2Elo!/combinedRedElo)*Float(100)*Float(netRedElo)
+                    var teamRed2 = red2[index]
+                    elos[teamRed2] = elos[teamRed2]! + red2EloChange
+                    
+                    var blue1Elo = elos[blue1[index]]
+                    var blue1EloChange = Float(blue1Elo!/combinedBlueElo)*Float(100)*Float(netBlueElo)
+                    var teamBlue1 = blue1[index]
+                    elos[teamBlue1] = elos[teamBlue1]! + blue1EloChange
+                    
+                    var blue2Elo = elos[blue2[index]]
+                    var blue2EloChange = Float(blue1Elo!/combinedBlueElo)*Float(100)*Float(netBlueElo)
+                    var teamBlue2 = blue2[index]
+                    elos[teamBlue2] = elos[teamBlue2]! + blue2EloChange
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+        }
+       }
+        
 }
+    
+    
+}
+
+
