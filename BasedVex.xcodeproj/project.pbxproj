@@ -15,6 +15,7 @@
 		BA0CBB601E99D8E500B45A72 /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CBB5F1E99D8E500B45A72 /* TeamInfo.swift */; };
 		BA0CBB621E99DE0500B45A72 /* teamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CBB611E99DE0500B45A72 /* teamInfoViewController.swift */; };
 		BA679C001E9A18E2007F77C6 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679BFF1E9A18E2007F77C6 /* MatchesViewController.swift */; };
+		BA679C021E9A293C007F77C6 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679C011E9A293C007F77C6 /* MatchTableViewCell.swift */; };
 		BA9974C51E99A0BA002348C2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9974C41E99A0BA002348C2 /* TableViewController.swift */; };
 		F5589D4037826D998D636FA9 /* Pods_BasedVexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE9C3E408B398F8521E696F /* Pods_BasedVexTests.framework */; };
 		F9E70E081E997B8900DAE6B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E70E071E997B8900DAE6B4 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		BA0CBB5F1E99D8E500B45A72 /* TeamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
 		BA0CBB611E99DE0500B45A72 /* teamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamInfoViewController.swift; sourceTree = "<group>"; };
 		BA679BFF1E9A18E2007F77C6 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		BA679C011E9A293C007F77C6 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		BA9974C41E99A0BA002348C2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BFE9C3E408B398F8521E696F /* Pods_BasedVexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasedVexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E653B328CA2B7FFA9279D6B3 /* Pods-BasedVexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasedVexUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasedVexUITests/Pods-BasedVexUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				F9E70E091E997B8900DAE6B4 /* ViewController.swift */,
 				BA9974C41E99A0BA002348C2 /* TableViewController.swift */,
 				F9E70E0B1E997B8900DAE6B4 /* Main.storyboard */,
+				BA679C011E9A293C007F77C6 /* MatchTableViewCell.swift */,
 				BA679BFF1E9A18E2007F77C6 /* MatchesViewController.swift */,
 				BA0CBB611E99DE0500B45A72 /* teamInfoViewController.swift */,
 				BA03C6341E99C8C30086FB62 /* RankingTableViewCell.swift */,
@@ -475,6 +478,7 @@
 				BA03C6351E99C8C30086FB62 /* RankingTableViewCell.swift in Sources */,
 				BA9974C51E99A0BA002348C2 /* TableViewController.swift in Sources */,
 				BA0CBB601E99D8E500B45A72 /* TeamInfo.swift in Sources */,
+				BA679C021E9A293C007F77C6 /* MatchTableViewCell.swift in Sources */,
 				BA03C6331E99C7F20086FB62 /* RankingTableViewController.swift in Sources */,
 				F9E70E081E997B8900DAE6B4 /* AppDelegate.swift in Sources */,
 			);
