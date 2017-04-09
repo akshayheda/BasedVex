@@ -64,10 +64,10 @@ class teamInfoViewController: UIViewController {
             var dpr  = json2["result"].arrayValue.map({$0["dpr"].stringValue})[0]
             var ccwm  = json2["result"].arrayValue.map({$0["ccwm"].stringValue})[0]
             
-            self.oprLabel.text = "OPR: \(opr)"
-            self.dprLabel.text = "DPR: \(dpr)"
-            self.ccwmLabel.text = "CCWM: \(ccwm)"
-            self.trspLabel.text = "TSRP: \(trsp)"
+            self.oprLabel.text = "\(opr)"
+            self.dprLabel.text = "\(dpr)"
+            self.ccwmLabel.text = "\(ccwm)"
+            self.trspLabel.text = "\(trsp)"
         }
     }
 
