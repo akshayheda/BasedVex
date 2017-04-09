@@ -122,10 +122,7 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "match", for: indexPath) as! MatchTableViewCell
-        print(red2)
-        
-        
-        print(matchNumber.count)
+
         cell.red1.text = self.red1[indexPath.row]
         cell.red2.text = self.red2[indexPath.row]
         cell.red3.text = self.red3[indexPath.row]
@@ -135,12 +132,14 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.redScore.text = self.redScore[indexPath.row]
         cell.blueScore.text = self.blueScore[indexPath.row]
-        
-        if(self.redScore[indexPath.row] > self.blueScore[indexPath.row]) {
+
+        if(Int(self.redScore[indexPath.row])! >
+            Int(self.blueScore[indexPath.row])!) {
             cell.winner.text = "R"
         }
-        if(self.redScore[indexPath.row] < self.blueScore[indexPath.row]) {
+        if(Int(self.redScore[indexPath.row])! < Int(self.blueScore[indexPath.row])!) {
             cell.winner.text = "B"
+
         }
         
         if(Int(self.round[indexPath.row])! < 3) {
@@ -149,10 +148,10 @@ class MatchesViewController: UIViewController, UITableViewDelegate, UITableViewD
         if(Int(self.round[indexPath.row])! == 3) {
             cell.matchNumber.text = "QF \(self.instance[indexPath.row])-\(self.matchNumber[indexPath.row])"
         }
-        if(Int(self.round[indexPath.row])! == 3) {
+        if(Int(self.round[indexPath.row])! == 4) {
             cell.matchNumber.text = "SF \(self.instance[indexPath.row])-\(self.matchNumber[indexPath.row])"
         }
-        if(Int(self.round[indexPath.row])! == 3) {
+        if(Int(self.round[indexPath.row])! == 5) {
             cell.matchNumber.text = "F \(self.instance[indexPath.row])-\(self.matchNumber[indexPath.row])"
         }
         
